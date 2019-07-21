@@ -112,6 +112,7 @@ export default class MoviesDAO {
    * @returns {QueryParams} The QueryParams for genre search
    */
   static genreSearchQuery(genre) {
+    console.log("genre", genre)
     /**
     Ticket: Text and Subfield Search
 
@@ -123,7 +124,9 @@ export default class MoviesDAO {
 
     // TODO Ticket: Text and Subfield Search
     // Construct a query that will search for the chosen genre.
-    const query = {}
+    const query = {
+      genres: { $in: searchGenre },
+    }
     const project = {}
     const sort = DEFAULT_SORT
 
